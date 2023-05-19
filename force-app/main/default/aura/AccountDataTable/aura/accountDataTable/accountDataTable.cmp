@@ -1,0 +1,9 @@
+<aura:component controller="accountDataTableController">
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="Account" type="Account[]" />
+    <aura:attribute name="table" type="List" />
+
+    <aura:handler name="init" action="{!c.init}" value="{!this}" />
+
+    <lightning:datatable data="{!v.table}" columns="{!v.columns}" keyField="Id" />
+</aura:component>

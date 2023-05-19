@@ -1,0 +1,12 @@
+<aura:component>
+    <p>Hello from Parent component</p>
+    <aura:attribute name="getData" type="String" default="" />
+    <aura:attribute name="parentAttr" type="String" default="[{
+        
+    }]" />
+
+    <c:child1Practise1 />
+    <br />
+    <c:child2practise1 />
+
+</aura:component>

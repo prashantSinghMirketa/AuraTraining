@@ -1,0 +1,9 @@
+<aura:component>
+    Hello from Child component!!!
+    <aura:attribute name="childAttribute" type="String" />
+    <!-- declaring attribute to get value from parent  -->
+    <aura:attribute name="parentAttribute" type="String" />
+    <lightning:input label="Name" type="text" aura:id="Name" />
+    <lightning:button variant="base" type="Submit" label="Submit" onclick="{!c.getData}" />
+
+</aura:component>

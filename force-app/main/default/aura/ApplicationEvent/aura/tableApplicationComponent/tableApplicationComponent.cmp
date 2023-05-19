@@ -1,0 +1,9 @@
+<aura:component>
+    <aura:attribute name="tableData" type="List" default="[]" />
+    <aura:attribute name="columns" type="List" default="[
+            { label: 'Name', fieldName: 'Name', type: 'text' },
+            { label: 'Phone', fieldName: 'Phone', type: 'phone' },
+            { label: 'Email', fieldName: 'Email', type: 'email' }
+        ]" />
+    <lightning:datatable data="{!v.tableData}" columns="{!v.columns}" keyField="Id" />
+</aura:component>

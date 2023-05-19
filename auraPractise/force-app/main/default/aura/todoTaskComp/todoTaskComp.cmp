@@ -1,0 +1,10 @@
+<aura:component>
+    <aura:attribute name="setTask" type="String" default="" />
+    <tr>
+        <td data-label="Task">
+            <div class="slds-truncate" title="{!v.setTask}"></div>
+            <ui:outputText value="{!v.setTask}" />
+        </td>
+        <c:todoButtonComp />
+    </tr>
+</aura:component>

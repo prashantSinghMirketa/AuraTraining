@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable , lightning:actionOverride , force:lightningQuickAction">
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="isRequired" type="Boolean" default="false" />
+    <aura:attribute name="checktype" type="Boolean" default="false" />
+    <lightning:notificationsLibrary aura:id="notifLib" />
+
+    <lightning:navigation aura:id="navService" />
+
+    <lightning:recordEditForm aura:id="accForm" recordId="{!v.recordId}" objectApiName="Account"
+        onsuccess="{!c.handleOnSuccess}" onload="{!c.handleType}">
+
+        <lightning:card title="Create New Account">
+
+            <lightning:inputField fieldName="Name" />
+            <lightning:inputField fieldName="Type" aura:id="type" onchange="{!c.handleType}" />
+            <lightning:inputField fieldName="AccountNumber" required="{!v.isRequired}" aura:id="AccountNumber" />
+
+            <aura:if isTrue="{!v.checktype}">
+                <lightning:inputField fieldName="AnnualRevenue" aura:id="AnnualRevenue" />
+            </aura:if>
+            <lightning:button variant="brand" type="Submit" label="Save" />
+
+        </lightning:card>
+    </lightning:recordEditForm>
+    <br />
+    <div>
+        <c:accountDataTable />
+    </div>
+</aura:component>

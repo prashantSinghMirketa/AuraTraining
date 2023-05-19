@@ -1,0 +1,28 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <lightning:avatar src="http://codeskulptor-demos.commondatastorage.googleapis.com/descent/diamond_25_25.png" />
+    <aura:attribute name="tableData" type="List" default="[]" />
+    <aura:attribute name="columns" type="List" default="[
+            { label: 'Name', fieldName: 'Name', type: 'text' },
+            { label: 'Phone', fieldName: 'Phone', type: 'phone' },
+            { label: 'Email', fieldName: 'Email', type: 'email' }
+        ]" />
+
+
+    <!-- <div class ="container">
+        <lightning:input aura:id ="Name" label ="Name" type ="text" pattern = "[a-zA-Z ]*" maxlength = "25" required ="true"/>
+        <lightning:input aura:id ="Phone" label ="Phone" type="tel" pattern = "[0-9 ]*" maxlength = "11" minlength="5" required ="true"/>
+        <lightning:input aura:id = "Email" label = "E-mail" type = "email" required = "true" />
+        <br />
+        <lightning:button variant = "Success" label = "Submit" onclick ="{!c.getData}" />
+    </div> -->
+
+    <!-- <c:formComponent onclick="{!c.handleFormSubmit}" /> -->
+    <c:formComponent tableData="{!v.tableData}" />
+    <c:tableComponent tableData="{!v.tableData}" columns="{!v.columns}" />
+
+
+    <!-- <lightning:datatable data="{!v.tableData}" columns="{!v.columns}" keyField="Id"/> -->
+
+</aura:component>

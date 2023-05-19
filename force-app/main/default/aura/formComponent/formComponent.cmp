@@ -1,0 +1,14 @@
+<aura:component>
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.init}" /> -->
+    <!-- <aura:attribute name="name" type="String" />
+    <aura:attribute name="phone" type="String" />
+    <aura:attribute name="email" type="String" /> -->
+    <aura:attribute name="onclick" type="Aura.Action" />
+    <aura:attribute name="tableData" type="List" default="[]" />
+
+    <lightning:input aura:id="Name" label="Name" type="text" pattern="[a-zA-Z ]*" maxlength="25" required="true" />
+    <lightning:input aura:id="Phone" label="Phone" type="tel" pattern="[0-9 ]*" maxlength="11" minlength="5"
+        required="true" />
+    <lightning:input aura:id="Email" label="E-mail" type="email" required="true" />
+    <lightning:button variant="Success" label="Submit" onclick="{!c.getData}" />
+</aura:component>

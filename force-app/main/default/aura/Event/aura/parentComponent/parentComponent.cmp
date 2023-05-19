@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler name="firstPractiseEvent" event="c:firstPractiseEvent" action="{!c.handleAddRecordEvent}" />
+
+
+    <lightning:avatar src="http://codeskulptor-demos.commondatastorage.googleapis.com/descent/diamond_25_25.png" />
+    <aura:attribute name="tableData" type="List" default="[]" />
+    <aura:attribute name="columns" type="List" default="[
+            { label: 'Name', fieldName: 'Name', type: 'text' },
+            { label: 'Phone', fieldName: 'Phone', type: 'phone' },
+            { label: 'Email', fieldName: 'Email', type: 'email' }
+        ]" />
+
+    <c:formComponent />
+    <c:tableComponent tableData="{!v.tableData}" columns="{!v.columns}" />
+</aura:component>

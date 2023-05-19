@@ -1,0 +1,4 @@
+<aura:component>
+    This is 2nd child.
+    <lightning:datatable data="" columns="" />
+</aura:component>
